@@ -1,5 +1,5 @@
 {
-  "name": "vue-routes-templates",
+  "name": "rap-mobile-exp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "4.1.1",
+    "axios": "0.19.2",
     "font-awesome": "4.7.0",
+    "moment": "2.24.0",
+    "underscore": "1.10.2",
     "vue": "^2.6.11",
+    "vue-plugin-load-script": "1.2.0",
     "vue-router": "3.1.6",
     "vuetify": "2.2.18"
   },
