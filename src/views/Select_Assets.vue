@@ -36,11 +36,6 @@
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
 
-          <!--
-"<span class='text--primary'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos."
-function formatImageIgnStat(cellValue) {
-
-          -->
           <v-list-item-content>
             <v-list-item-title v-html="item.RegNumber"></v-list-item-title>
             <v-list-item-subtitle v-html="item.subTitle"></v-list-item-subtitle>
@@ -53,18 +48,15 @@ function formatImageIgnStat(cellValue) {
 </template>
 
 <script>
-import axios from "axios";
-import mock from "../api5/V5_view_VehiclePositions_.json";
-import * as _ from "underscore";
+//import axios from "axios";
+//import mock from "../api5/V5_view_VehiclePositions_.json";
+//import * as _ from "underscore";
 //import moment from "moment";
-
-console.log("Hey dude.");
 
 export default {
   data() {
     return {
       item: 1,
-      //items: [],
       errors: [],
       items: [],
       vehicles: [],
@@ -74,37 +66,35 @@ export default {
   // Fetches posts when the component is created.
   created() {
     //debugger;
-    axios
-      .get("https://control.raptortech.co.za/api5/V5_view_VehiclePositions_")
-      .then(response => {
-        // JSON responses are automatically parsed.
-        //this.posts = response.data
-        /* 
-        console.log(response);
-        debugger;
-        if (this.mock) {
-          this.items = mock.$values;
-        } else {
-          this.items = response;
-        } */
+    var url = "/api5/V5_view_VehiclePositions_";
+    if (!this.mock) {
+      url = this.baseUrl + url;
+    }
+    if (this.debug) {
+      console.log(url);
+    }
+    //debugger;/
 
-        // Add avat to things
-        // debugger;
+    this.$axios
+      .get(url)
+      .then(response => {
         console.log(response.data);
-        //debugger;
+
+        var rt = new this.$vehicleLists(this.baseUrl, this.$moment);
 
         response.data.$values.map(function(value, key) {
-          formatImageIgnStat(value);
-          formantSubTitle(value);
+          //debugger;
+          rt.formatImageIgnStat(value);
+          rt.formantSubTitle(value);
         });
-
+        //debugger;
         this.items = response.data.$values;
-
-        this.vehicles = _.filter(this.items, function(item) {
+        //debugger;
+        this.vehicles = this.$_.filter(this.items, function(item) {
           return item.UnitModel2ID !== 35;
         });
 
-        this.assets = _.filter(this.items, function(item) {
+        this.assets = this.$_.filter(this.items, function(item) {
           return item.UnitModel2ID === 35;
         });
       })
@@ -115,64 +105,6 @@ export default {
 };
 </script>
 
-/*
-
-console.log(apiUrl);
-
-var app1 = new Vue({
-  el: "#app",
-  vuetify: new Vuetify(),
-  router,
-  data: () => ({
-    items: [],
-    vehicles: [],
-    assets: []
-  }),
-
-  mounted() {
-    axios.get(apiUrl).then(response => {
-      // Add avat to things
-      // debugger;
-      response.data.$values.map(function(value, key) {
-        formatImageIgnStat(value);
-        formantSubTitle(value);
-      });
-
-      this.items = response.data.$values;
-
-      this.vehicles = _.filter(this.items, function(item) {
-        return item.UnitModel2ID !== 35;
-      });
-
-      this.assets = _.filter(this.items, function(item) {
-        return item.UnitModel2ID === 35;
-      });
-
-      //console.log(response);
-    });
-  },
-
-  created() {
-    //pseudo code
-    _gma = new google_maps_all();
-  },
-
-  computed: {
-    // a computed getter
-    /*    reversedMessage: function() {
-      // `this` points to the vm instance
-      //debugger;
-      return this.message
-        .split("")
-        .reverse()
-        .join("");
-    } */
-  }
-});
-
-
-
-*/
 
 
 

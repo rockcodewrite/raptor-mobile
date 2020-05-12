@@ -1,13 +1,25 @@
+## Currently
+
+2020-04-30
+
+- Trying to figure out how to moved javascript stuff to modules, so that I can clean
+  up the libraryes and then use : this method: https://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/
+  to include and access the libraries from my components.
+
+- Tidy up the code.
+- Busy with: get formatImageIgnStat(value); in the Select Assets thing to work.
+
 ## What is next
+
 - get axios working direct API call to server
 
-2020-04-03 
-- Added a global variable mock and aapi5json result so that results appear in the 
-  Select Assets tenplate
-  
-- USed below to get JSON mocking stuff working. trying to get API working
-check out https://codesandbox.io/s/v3ll1ww49l for local json 
+2020-04-03
 
+- Added a global variable mock and aapi5json result so that results appear in the
+  Select Assets tenplate
+
+- USed below to get JSON mocking stuff working. trying to get API working
+  check out https://codesandbox.io/s/v3ll1ww49l for local json
 
 ## Current
 

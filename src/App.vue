@@ -1,5 +1,8 @@
 <template>
   <v-app>
+    <!-- 
+          ____________________________________________________ Sidbar 
+    -->
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
         <v-list-item to="/" link>
@@ -85,10 +88,6 @@
         </v-list-item>
       </v-list>
 
-      <!-- 
-src="https://cdn.vuetifyjs.com/images/lists/ali.png"
-                              
-      -->
       <v-img
         src="https://control.raptortech.co.za/img/powered_by_head_shed_login.png"
         width="256px"
@@ -108,6 +107,10 @@ src="https://cdn.vuetifyjs.com/images/lists/ali.png"
       </v-img>
     </v-navigation-drawer>
 
+    <!-- 
+          ____________________________________________________ End Sidbar _______________________________________________
+                              
+    -->
     <v-app-bar app color="indigo" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Application</v-toolbar-title>
@@ -126,4 +129,13 @@ src="https://cdn.vuetifyjs.com/images/lists/ali.png"
 </template>
 
 
+<script>
+export default {
+  data() {
+    return {
+      drawer: null
+    };
+  }
+};
+</script>
 
