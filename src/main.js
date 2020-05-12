@@ -16,8 +16,6 @@ import MapAll from "./views/MapAll";
 
 import vehicleLists from "./main.vehicleLists.js";
 
-//
-
 Vue.config.productionTip = false;
 
 var _gma;
@@ -34,8 +32,6 @@ Vue.loadScript("https://maps.googleapis.com/maps/api/js")
   .catch(() => {
     // Failed to fetch script
   });
-
-//     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
 Vue.loadScript("google_maps_all.js")
   .then(() => {
@@ -54,8 +50,6 @@ Object.defineProperty(Vue.prototype, "$_", { value: _ });
 Object.defineProperty(Vue.prototype, "$vehicleLists", { value: vehicleLists });
 Object.defineProperty(Vue.prototype, "$axios", { value: axios });
 
-const Foo = { template: "<div> <h1> foo </h1> </div>" };
-
 const routes = [
   {
     path: "/",
@@ -64,10 +58,6 @@ const routes = [
   {
     path: "/about",
     component: About
-  },
-  {
-    path: "/foo",
-    component: Foo
   },
   {
     path: "/assets",
