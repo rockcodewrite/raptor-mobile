@@ -13,6 +13,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Assets from "./views/Select_Assets";
 import MapAll from "./views/MapAll";
+import MapAll2 from "./views/MapAll2";
 
 import vehicleLists from "./main.vehicleLists.js";
 
@@ -64,9 +65,14 @@ const routes = [
     component: Assets
   },
   {
-    path: "/Map/:id",
+    path: "/Map2/:id",
     component: MapAll,
     props: dynamicPropsFn
+  },
+  {
+    path: "/Map/:id",
+    component: MapAll2,
+    props: true
   }
 ];
 

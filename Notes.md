@@ -1,5 +1,11 @@
 ## Currently
 
+2020-05-12
+
+- Got module working for vehicle lists, I now need to make the google maps thing work in the component
+  in the same way that I got the list working
+  to.
+
 2020-04-30
 
 - Trying to figure out how to moved javascript stuff to modules, so that I can clean
