@@ -4,7 +4,7 @@
 //  Version  0.0.1
 //--------------------------------------------------------------------------------------------------------
 
-function google_maps_all() {
+export default function google_maps_all(_baseUrl, moment, _, axios) {
   "use strict";
 
   var TIME_AMBER_MOVING = 30; //mins

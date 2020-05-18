@@ -1,4 +1,15 @@
-## Currently
+## Next
+
+- tidy up google module and show the popup box for the vehicle when we select it.
+
+- Convert the google-map library to a module that can be used when a vehicle is selected.
+
+
+
+
+
+
+## History
 
 2020-05-12
 
