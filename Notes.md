@@ -1,13 +1,14 @@
 ## Next
 
-- tidy up google module and show the popup box for the vehicle when we select it.
+## Busy
 
-- Convert the google-map library to a module that can be used when a vehicle is selected.
+2020-05-18
 
+- Going through the old application and adding all existing funcionality one screen at a time,
+  currenlty busy with Home/
 
-
-
-
+- Trying to understand Cards
+  https://v15.vuetifyjs.com/en/components/cards
 
 ## History
 

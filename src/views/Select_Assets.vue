@@ -48,24 +48,18 @@
 </template>
 
 <script>
-//import axios from "axios";
-//import mock from "../api5/V5_view_VehiclePositions_.json";
-//import * as _ from "underscore";
-//import moment from "moment";
-
 export default {
   data() {
     return {
       item: 1,
       errors: [],
-      items: [],
+      //items: [],
       vehicles: [],
       assets: []
     };
   },
-  // Fetches posts when the component is created.
+
   created() {
-    //debugger;
     var url = "/api5/V5_view_VehiclePositions_";
     if (!this.mock) {
       url = this.baseUrl + url;
@@ -73,23 +67,23 @@ export default {
     if (this.debug) {
       console.log(url);
     }
-    //debugger;/
 
     this.$axios
       .get(url)
       .then(response => {
-        console.log(response.data);
+        if (!this.debug) {
+          console.log(response.data);
+        }
 
-        var rt = new this.$vehicleLists(this.baseUrl, this.$moment);
-
+        // Add
+        var retList = new this.$vehicleLists(this.baseUrl, this.$moment);
         response.data.$values.map(function(value, key) {
-          //debugger;
-          rt.formatImageIgnStat(value);
-          rt.formantSubTitle(value);
+          retList.formatImageIgnStat(value);
+          retList.formantSubTitle(value);
         });
-        //debugger;
+
         this.items = response.data.$values;
-        //debugger;
+
         this.vehicles = this.$_.filter(this.items, function(item) {
           return item.UnitModel2ID !== 35;
         });
