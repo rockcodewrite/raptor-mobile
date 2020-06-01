@@ -1,55 +1,60 @@
  <template>
   <div>
     <h1>Home</h1>
-    <v-card>
-      <v-container fluid style="min-height: 0;" grid-list-lg>
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-card-title primary-title>
-                <div class="headline">Unlimited music now</div>
-                <div>Listen to your favorite artists and albums whenever and wherever, online and offline.</div>
-              </v-card-title>
-              <v-card-actions>
-                <v-btn flat dark>Listen now</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+
+    <v-card class="mx-auto" outlined>
+      <v-card-title primary-title>
+        <div>
+          <h1 class="text-center">
+            <span class="fa fa-user feature-icon text-primary"></span>
+          </h1>
+          <h3 class="headline mb-0">Client Details</h3>
+          <div>
+            <div>Name: {{client_details.Title}} {{client_details.Initials}} {{client_details.FName}} {{client_details.LName}}</div>
+
+            <div>Contact: {{client_details.Tel_Code}} {{client_details.Tel_No}}</div>
+
+            <div>Contact: {{client_details.CellNo}}</div>
+
+            <div>email: {{client_details.EMailAddress}}</div>
+          </div>
+        </div>
+        <v-card-text>"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."</v-card-text>
+      </v-card-title>
+
+      <v-card-actions>
+        <v-btn flat color="orange">Share</v-btn>
+        <v-btn flat color="orange">Explore</v-btn>
+      </v-card-actions>
     </v-card>
 
-    <v-card>
-      <v-container fluid style="min-height: 0;" grid-list-lg>
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-card-title primary-title>
-                <div class="headline">Unlimited music now</div>
-                <div>Listen to your favorite artists and albums whenever and wherever, online and offline.</div>
+    <v-card class="mx-auto" outlined>
+      <v-list-item three-line>
+        <v-list-item-content>
+          <div class="overline mb-4">OVERLINE</div>
+          <v-list-item-title class="headline mb-1">Client Details</v-list-item-title>
+          <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
 
-                <div>
-                  <i class="fa fa-user feature-icon text-primary"></i>
-                </div>
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-cloud-download</v-icon>
+            </v-list-item-icon>
+            <v-list-item-subtitle>48%</v-list-item-subtitle>
+          </v-list-item>
+        </v-list-item-content>
 
-                <div>
-                  <h3 class="home-heading">Client Details</h3>
-                  <div>Name: {{client_details.Title}} {{client_details.Initials}} {{client_details.FName}} {{client_details.LName}}</div>
+        <v-list-item-avatar tile size="80" color="grey">
+          <v-icon>fa fa-user fa-5x</v-icon>
+          <i class="fa fa-user feature-icon text-primary"></i>
+        </v-list-item-avatar>
 
-                  <div>Contact: {{client_details.Tel_Code}} {{client_details.Tel_No}}</div>
+        <v-icon>fas fa-edit</v-icon>
+      </v-list-item>
 
-                  <div>Contact: {{client_details.CellNo}}</div>
-
-                  <div>email: {{client_details.EMailAddress}}</div>
-                </div>
-              </v-card-title>
-              <v-card-actions>
-                <v-btn flat dark>Listen now</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <v-card-actions>
+        <v-btn text>Button</v-btn>
+        <v-btn text>Button</v-btn>
+      </v-card-actions>
     </v-card>
   </div>
 </template> 
@@ -84,7 +89,7 @@ export default {
         if (!this.debug) {
           console.log(response.data);
         }
-        debugger;
+        //debugger;
 
         this.client_details = response.data;
       })

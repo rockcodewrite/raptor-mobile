@@ -25,6 +25,7 @@ Vue.use(LoadScript);
 Vue.prototype.debug = true;
 Vue.prototype.mock = false;
 Vue.prototype.baseUrl = "https://control.raptortech.co.za";
+
 Object.defineProperty(Vue.prototype, "$moment", { value: moment });
 Object.defineProperty(Vue.prototype, "$_", { value: _ });
 Object.defineProperty(Vue.prototype, "$vehicleLists", { value: vehicleLists });
