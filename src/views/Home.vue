@@ -1,60 +1,96 @@
  <template>
   <div>
-    <h1>Home</h1>
+    <v-card>
+      <v-container fluid grid-list-lg>
+        <v-layout row wrap>
+          <v-flex xs12>
+            <v-card class="mx-auto" outlined>
+              <div class="list-group-item list-group-item-home">
+                <h1 class="ng-binding" style="text-align:center">Raptor Mobile
+                  <small></small>
+                </h1>
 
-    <v-card class="mx-auto" outlined>
-      <v-card-title primary-title>
-        <div>
-          <h1 class="text-center">
-            <span class="fa fa-user feature-icon text-primary"></span>
-          </h1>
-          <h3 class="headline mb-0">Client Details</h3>
-          <div>
-            <div>Name: {{client_details.Title}} {{client_details.Initials}} {{client_details.FName}} {{client_details.LName}}</div>
+                <v-layout row>
+                  <v-flex xs4 order-md3 order-xs1>
+                    <v-card dark tile flat color="red lighten-2"></v-card>
+                  </v-flex>
 
-            <div>Contact: {{client_details.Tel_Code}} {{client_details.Tel_No}}</div>
+                  <v-flex xs4 order-md2 order-xs2>
+                    <v-card dark tile flat color="white">
+                      <v-img
+                        id="logo2"
+                        src="https://control.raptortech.co.za/img/Raptor Eye.png"
+                        max-width="200"
+                      ></v-img>
+                    </v-card>
+                  </v-flex>
 
-            <div>Contact: {{client_details.CellNo}}</div>
+                  <v-flex xs4 order-md1 order-xs3>
+                    <v-card dark tile flat color="red darken-1"></v-card>
+                  </v-flex>
+                </v-layout>
 
-            <div>email: {{client_details.EMailAddress}}</div>
-          </div>
-        </div>
-        <v-card-text>"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."</v-card-text>
-      </v-card-title>
+                <div>
+                  <div style="text-align:center">Emergency: Theft or Hijacking</div>
+                  <div style="text-align:center">
+                    <a href="tel:+27-860-106-231">0860 106 231 (PRIMARY)</a>
+                  </div>
+                </div>
+              </div>
 
-      <v-card-actions>
-        <v-btn flat color="orange">Share</v-btn>
-        <v-btn flat color="orange">Explore</v-btn>
-      </v-card-actions>
-    </v-card>
+              <v-card-actions>
+                <!--             
+                                        <v-btn text>Button</v-btn>
+                                        <v-btn text>Button</v-btn>
+                -->
+              </v-card-actions>
+            </v-card>
 
-    <v-card class="mx-auto" outlined>
-      <v-list-item three-line>
-        <v-list-item-content>
-          <div class="overline mb-4">OVERLINE</div>
-          <v-list-item-title class="headline mb-1">Client Details</v-list-item-title>
-          <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+            <v-card class="mx-auto">
+              <v-card-title primary-title class="justify-center">
+                <span sm12 class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x" style="color:#2196F3"></i>
+                  <i class="fa fa-user fa-stack-1x" style="color:#2196F3"></i>
+                </span>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-cloud-download</v-icon>
-            </v-list-item-icon>
-            <v-list-item-subtitle>48%</v-list-item-subtitle>
-          </v-list-item>
-        </v-list-item-content>
+                <div sm12>Client Details:</div>
+              </v-card-title>
 
-        <v-list-item-avatar tile size="80" color="grey">
-          <v-icon>fa fa-user fa-5x</v-icon>
-          <i class="fa fa-user feature-icon text-primary"></i>
-        </v-list-item-avatar>
+              <div style="text-align:center">
+                <div>
+                  <b>Name:</b>
+                  {{client_details.Title}}
+                  {{client_details.Initials}} {{client_details.FName}}
+                  {{client_details.LName}}
+                </div>
 
-        <v-icon>fas fa-edit</v-icon>
-      </v-list-item>
+                <div>
+                  <b>Land line:</b>
+                  {{client_details.Tel_Code}}
+                  {{client_details.Tel_No}}
+                </div>
 
-      <v-card-actions>
-        <v-btn text>Button</v-btn>
-        <v-btn text>Button</v-btn>
-      </v-card-actions>
+                <div>
+                  <b>Mobile:</b>
+                  {{client_details.CellNo}}
+                </div>
+
+                <div>
+                  <b>Email:</b>
+                  {{client_details.EMailAddress}}
+                </div>
+              </div>
+
+              <v-card-actions>
+                <!--                     <v-btn flat color="orange">Share</v-btn>
+                <v-btn flat color="orange">Explore</v-btn>-->
+              </v-card-actions>
+
+              <!-- --END OF LIST-->
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-card>
   </div>
 </template> 

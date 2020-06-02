@@ -15,15 +15,6 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item to="/foo" link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
         <v-list-item to="/assets" link>
           <v-list-item-action>
             <v-icon>fa fa-car</v-icon>
