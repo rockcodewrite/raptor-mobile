@@ -33,7 +33,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item link>
+        <v-list-item to="/vehiclesForTrips">
           <v-list-item-action>
             <v-icon>fa fa-arrows-h</v-icon>
           </v-list-item-action>
@@ -102,7 +102,7 @@
           ____________________________________________________ End Sidbar _______________________________________________
                               
     -->
-    <v-app-bar app color="indigo" dark>
+    <v-app-bar app color="blue" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
@@ -111,7 +111,7 @@
       <router-view></router-view>
     </v-content>
 
-    <v-footer color="indigo" app>
+    <v-footer color="blue" app>
       <span class="white--text">&copy; 2019</span>
     </v-footer>
   </v-app>

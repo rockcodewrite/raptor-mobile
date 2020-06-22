@@ -1,6 +1,15 @@
 ## Next
 
+2020-06-08
+
+- Get Date selection working correctly for the thing
+
 ## Busy
+
+2020-06-02
+
+- Next get icons displaying properly for the houses
+- get trips selection working
 
 2020-05-18
 

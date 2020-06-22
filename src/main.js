@@ -14,6 +14,10 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Assets from "./views/Select_Assets";
 import MapAll from "./views/MapAll";
+import VehiclesForTrips from "./views/Select_VehiclesForTrips";
+import VehiclesForTripsDate from "./views/Select_VehiclesForTrips_Date";
+import Trips from "./views/Select_Trips";
+
 
 import vehicleLists from "./main.vehicleLists.js";
 
@@ -52,7 +56,23 @@ const routes = [
     path: "/Map/:id",
     component: MapAll,
     props: true
+  },
+  {
+    path: "/vehiclesForTrips",
+    component: VehiclesForTrips
+  },
+  {
+    path: "/vehiclesForTripsDate/:id",
+    component: VehiclesForTripsDate
+  },
+  {
+    path: "/Trips/:id/:day",
+    component: Trips
   }
+
+
+  
+
 ];
 
 const router = new VueRouter({ routes });
