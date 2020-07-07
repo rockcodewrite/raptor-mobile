@@ -1,4 +1,8 @@
 ## Next
+]2020-07-06
+- Get trips working correctly
+
+## Next
 
 2020-06-08
 
