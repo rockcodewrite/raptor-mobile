@@ -18,6 +18,7 @@ import MapAll from "./views/MapAll";
 import VehiclesForTrips from "./views/Select_VehiclesForTrips";
 import VehiclesForTripsDate from "./views/Select_VehiclesForTrips_Date";
 import Trips from "./views/Select_Trips";
+import Trip from "./views/MapTrip";
 
 
 import vehicleLists from "./main.vehicleLists.js";
@@ -68,6 +69,10 @@ const routes = [
   {
     path: "/Trips/:id/:day",
     component: Trips
+  },
+  {
+    path: "/Trip/:id/:BegID/:EndID",
+    component: Trip
   }
 
 

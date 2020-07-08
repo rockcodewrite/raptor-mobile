@@ -10,7 +10,7 @@
 
         <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
-        <v-list-item v-else :key="item.title" @click :to="'/Map/' + item.UnitID">
+        <v-list-item v-else :key="item.title" @click :to="'/Trip/' + $route.params.id +'/' + item.StartPosId + '/' + item.EndPosId  ">
           <v-list-item-avatar>
             <v-icon>fa fa-arrows-h</v-icon>
             

@@ -20,14 +20,41 @@ export default {
     }
   }, // props
   mounted: function() {
-    var mapAll = new this.$mapAll(
-      this.baseUrl,
-      this.$moment,
-      this.$_,
-      this.$axios
-    );
-    var id2 = this.$attrs.id;
-    mapAll.initialise(id2);
+    var url = "/api3/V3view_UnitPositions"; //?&UnitID=860990002907872&BegID=122078444&EndID=122087315";//"/api5/V5_view_VehiclePositions_";
+    debugger;
+
+    if (!this.mock) {
+      url = this.baseUrl + url;
+      url += "?UnitID=" + this.$route.params.id;
+      url += "&BegID=" + this.$route.params.BegID;
+      url += "&EndID=" + this.$route.params.EndID;
+    }
+
+    if (this.debug) {
+      console.log(url);
+    }
+
+    this.$axios
+      .get(url)
+      .then(response => {
+        if (!this.debug) {
+          console.log(response.data);
+        }
+        debugger;
+
+        var mapTrip = new this.$mapTrip(
+          this.baseUrl,
+          this.$moment,
+          this.$_,
+          this.$axios,
+          response.data.$values
+        );
+        // var id2 = this.$attrs.id;
+        mapTrip.initializeTrips(response.data.$values);
+      })
+      .catch(e => {
+          this.errors.push(e);
+      });
   } // mounted
 }; // export
 </script>
