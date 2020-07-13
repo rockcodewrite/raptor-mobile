@@ -1,3 +1,7 @@
+## version 0.2.1
+- Displaying alarms for houses, perhaps this shoudl jsut be all the alarms for aday as apposed
+  to individual Unit. 
+
 ## version 0.2.0
 - Plotting trips working. 
 

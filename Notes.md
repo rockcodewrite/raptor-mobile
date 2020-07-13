@@ -1,4 +1,8 @@
 ## Next
+2020-07-13
+- Get Icons showing correctly. 
+
+## Next
 ]2020-07-06
 - Get trips working correctly
 

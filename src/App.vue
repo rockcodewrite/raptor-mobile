@@ -42,7 +42,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item link>
+        <v-list-item  to="/Alarms" link>
           <v-list-item-action>
             <v-icon>fa fa-exclamation-triangle</v-icon>
           </v-list-item-action>
@@ -56,7 +56,7 @@
             <v-icon>fa fa-arrows</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Alarms</v-list-item-title>
+            <v-list-item-title>Full Screen</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 

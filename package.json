@@ -13,6 +13,7 @@
     "font-awesome": "4.7.0",
     "google-maps": "4.2.3",
     "moment": "2.24.0",
+    "screenfull": "5.0.2",
     "underscore": "1.10.2",
     "vue": "^2.6.11",
     "vue-plugin-load-script": "1.2.0",

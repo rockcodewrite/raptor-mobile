@@ -4,12 +4,14 @@ import vuetify from "@/plugins/vuetify";
 import VueRouter from "vue-router";
 import LoadScript from "vue-plugin-load-script"; //vue-plugin-load-script
 import axios from "axios";
+import screenfull from "screenfull";
 
 import * as _ from "underscore";
 import moment from "moment";
 import googleMapsLoader from "google-maps";
 import mapAll from "./main.maps";
-import mapTrip from "./main.maps.trips"
+import mapTrip from "./main.maps.trips";
+import Library from "./main.library";
 
 import Home from "./views/Home";
 import About from "./views/About";
@@ -19,7 +21,7 @@ import VehiclesForTrips from "./views/Select_VehiclesForTrips";
 import VehiclesForTripsDate from "./views/Select_VehiclesForTrips_Date";
 import Trips from "./views/Select_Trips";
 import Trip from "./views/MapTrip";
-
+import Alarms from "./views/Select_Alarms";
 
 import vehicleLists from "./main.vehicleLists.js";
 
@@ -73,6 +75,16 @@ const routes = [
   {
     path: "/Trip/:id/:BegID/:EndID",
     component: Trip
+  },
+  {
+    path: "/Alarms",
+    component: Alarms
+  },
+    
+  {
+    path: "/Switch/:full_screen",
+    component: Library
+
   }
 
 
