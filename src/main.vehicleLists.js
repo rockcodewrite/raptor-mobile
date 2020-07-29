@@ -12,8 +12,8 @@ export default function routines(_baseUrl, moment) {
   var IMG_MOVE_PROB = _baseUrl + "/mg/magentaBall.gif";
   var IMG_BATT_OK = _baseUrl + "/img/greenBall.gif";
 
-  var IMG_HOME = _baseUrl + "/img/home.png";
-  var IMG_HOME_RED = _baseUrl + "/img/home-red.png";
+  var IMG_HOME = _baseUrl + "/img/map/home.png";
+  var IMG_HOME_RED = _baseUrl + "/img/map/home-red.png";
 
   var map;
   var icons;
@@ -66,9 +66,9 @@ export default function routines(_baseUrl, moment) {
   ///    Modifed, for House Alarams
   ///----------------------------------------------------------
   this.formatImageIgnStat = function(cellValue) {
-    //debugger;
+    debugger;
     var today = moment(); //new Date();
-    var last = moment(cellValue.lastUpdateTime);
+    var last = moment(cellValue.LastUpdateTime);
     var stationary = IMG_STOP;
     var image = IMG_OTHER;
     var imageHtml = "";
@@ -76,7 +76,7 @@ export default function routines(_baseUrl, moment) {
     switch (cellValue.IgnitionStatus) {
       case 0:
         // ignition off
-        if (last.add(TIME_STATIONARY) < today) {
+        if (last.add(TIME_STATIONARY, "m") < today) {
           image = IMG_OTHER;
         } else {
           image = IMG_STOP;

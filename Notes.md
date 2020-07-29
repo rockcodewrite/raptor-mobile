@@ -1,9 +1,21 @@
-## Next
-2020-07-13
-- Get Icons showing correctly. 
+## 2020-07-29
+
+- Got activating a js function from nmenu working, So I could implment Full Screen
+  routine
+- Got Screenful working.  
+
+- Also started investigating a nav-back button: https://stackoverflow.com/questions/48104842/how-can-i-go-back-route-back-on-vue-router
 
 ## Next
+
+2020-07-13
+
+- Get Icons showing correctly.
+
+## Next
+
 ]2020-07-06
+
 - Get trips working correctly
 
 ## Next

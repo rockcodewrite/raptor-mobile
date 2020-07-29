@@ -4,7 +4,7 @@ import vuetify from "@/plugins/vuetify";
 import VueRouter from "vue-router";
 import LoadScript from "vue-plugin-load-script"; //vue-plugin-load-script
 import axios from "axios";
-import screenfull from "screenfull";
+import Screenfull from "screenfull";
 
 import * as _ from "underscore";
 import moment from "moment";
@@ -22,6 +22,8 @@ import VehiclesForTripsDate from "./views/Select_VehiclesForTrips_Date";
 import Trips from "./views/Select_Trips";
 import Trip from "./views/MapTrip";
 import Alarms from "./views/Select_Alarms";
+import AssetsAlarmsDate from "./views/Select_AssetsAlarmsDate";
+
 
 import vehicleLists from "./main.vehicleLists.js";
 
@@ -41,6 +43,8 @@ Object.defineProperty(Vue.prototype, "$axios", { value: axios });
 Object.defineProperty(Vue.prototype, "$googleMapsLoader", {  value: googleMapsLoader });
 Object.defineProperty(Vue.prototype, "$mapTrip", {  value: mapTrip });
 Object.defineProperty(Vue.prototype, "$mapAll", { value: mapAll });
+
+
 
 const routes = [
   {
@@ -71,7 +75,7 @@ const routes = [
   {
     path: "/Trips/:id/:day",
     component: Trips
-  },
+  }, 
   {
     path: "/Trip/:id/:BegID/:EndID",
     component: Trip
@@ -80,14 +84,22 @@ const routes = [
     path: "/Alarms",
     component: Alarms
   },
-    
   {
     path: "/Switch/:full_screen",
-    component: Library
+    beforeEnter (to, from, next) {
 
-  }
-
-
+      if (Screenfull.isEnabled) {
+        Screenfull.request();
+      }      
+      // called before the route that renders this component is confirmed.
+      // does NOT have access to `this` component instance,
+      // because it has not been created yet when this guard is called!
+    }
+  },
+  {
+    path: "/SelectAssetsAlarmsDate/:id",
+    component: AssetsAlarmsDate
+  }  
   
 
 ];

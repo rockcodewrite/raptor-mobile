@@ -51,7 +51,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item link>
+        <v-list-item to="/Switch/full_screen">
           <v-list-item-action>
             <v-icon>fa fa-arrows</v-icon>
           </v-list-item-action>
@@ -68,6 +68,8 @@
             <v-list-item-title>About</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+
 
         <v-list-item link>
           <v-list-item-action>
@@ -104,7 +106,15 @@
     -->
     <v-app-bar app color="blue" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>Raptor</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon  to="/Map/123">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+
     </v-app-bar>
 
     <v-content>

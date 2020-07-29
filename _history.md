@@ -1,3 +1,6 @@
+## version 0.2.2
+- THe Full SCreen Button is working. 
+
 ## version 0.2.1
 - Displaying alarms for houses, perhaps this shoudl jsut be all the alarms for aday as apposed
   to individual Unit. 
