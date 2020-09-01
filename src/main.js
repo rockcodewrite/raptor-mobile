@@ -23,6 +23,8 @@ import Trips from "./views/Select_Trips";
 import Trip from "./views/MapTrip";
 import Alarms from "./views/Select_Alarms";
 import AssetsAlarmsDate from "./views/Select_AssetsAlarmsDate";
+import Login from "./views/Login"
+
 
 
 import vehicleLists from "./main.vehicleLists.js";
@@ -34,6 +36,7 @@ Vue.use(LoadScript);
 
 Vue.prototype.debug = true;
 Vue.prototype.mock = false;
+Vue.prototype.baseUrl = "http://localhost:2527";//"https://control.raptortech.co.za";
 Vue.prototype.baseUrl = "https://control.raptortech.co.za";
 
 Object.defineProperty(Vue.prototype, "$moment", { value: moment });
@@ -49,6 +52,11 @@ Object.defineProperty(Vue.prototype, "$mapAll", { value: mapAll });
 const routes = [
   {
     path: "/",
+    component: Login
+  },
+
+  {
+    path: "/home",
     component: Home
   },
   {

@@ -1,3 +1,12 @@
+## 2020-09-01
+- Reploy RaptorWeb  so I can test the things on this site while developing.
+
+## 2020-08-17
+
+
+- So get login working because current thing is not working so greate, or there is no login, 
+ceckout: https://codepen.io/madyanalj/pen/KRXxpN
+
 ## 2020-07-29
 
 - Got activating a js function from nmenu working, So I could implment Full Screen

@@ -1,3 +1,6 @@
+## Version 0.3.0
+- Added Login screen
+
 ## version 0.2.2
 - THe Full SCreen Button is working. 
 
