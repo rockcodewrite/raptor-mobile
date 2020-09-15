@@ -13,7 +13,7 @@
 
         <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
-        <v-list-item v-else :key="item.title" @click :to="'/Map/' + item.UnitID">
+        <v-list-item v-else :key="item.title" @click :to="'/SelectAssetsAlarmsDate/' + item.UnitID">
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
@@ -42,7 +42,10 @@ export default {
   },
 
   created() {
+
+    //https://control.raptortech.co.za/api5/V5_view_ViolationsByDay_?UnitiD=33066&Day=2020/09/14
     var url = "/api5/V5_view_VehiclePositions_";
+
     if (!this.mock) {
       url = this.baseUrl + url;
     }
@@ -66,9 +69,9 @@ export default {
 
         this.items = response.data.$values;
 
-        this.vehicles = this.$_.filter(this.items, function(item) {
-          return item.UnitModel2ID !== 35;
-        });
+        if (this.debug) {
+          console.log(this.items);
+        }
 
         this.assets = this.$_.filter(this.items, function(item) {
           return item.UnitModel2ID === 35;

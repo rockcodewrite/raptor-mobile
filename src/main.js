@@ -11,7 +11,7 @@ import moment from "moment";
 import googleMapsLoader from "google-maps";
 import mapAll from "./main.maps";
 import mapTrip from "./main.maps.trips";
-import Library from "./main.library";
+//import Library from "./main.library";
 
 import Home from "./views/Home";
 import About from "./views/About";
@@ -21,9 +21,13 @@ import VehiclesForTrips from "./views/Select_VehiclesForTrips";
 import VehiclesForTripsDate from "./views/Select_VehiclesForTrips_Date";
 import Trips from "./views/Select_Trips";
 import Trip from "./views/MapTrip";
-import Alarms from "./views/Select_Alarms";
+import SelectAlarms from "./views/Select_Alarms";
 import AssetsAlarmsDate from "./views/Select_AssetsAlarmsDate";
-import Login from "./views/Login"
+import Alarms from "./views/Alarms";
+
+
+//import Login from "./views/Login"
+//import Main from "./views/Main"
 
 
 
@@ -34,6 +38,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(LoadScript);
 
+Vue.prototype.loggedIn = false;
 Vue.prototype.debug = true;
 Vue.prototype.mock = false;
 Vue.prototype.baseUrl = "http://localhost:2527";//"https://control.raptortech.co.za";
@@ -51,8 +56,25 @@ Object.defineProperty(Vue.prototype, "$mapAll", { value: mapAll });
 
 const routes = [
   {
+    path:"/logout",
+    beforeEnter (to, from, next) {
+
+      if (Vue.prototype.debug) {
+        console.log("/logout")
+      }
+      Vue.prototype.loggedIn = false;
+
+      // called before the route that renders this component is confirmed.
+      // does NOT have access to `this` component instance,
+      // because it has not been created yet when this guard is called!
+    }    
+    
+  },
+  
+
+  {
     path: "/",
-    component: Login
+    component: Home
   },
 
   {
@@ -89,9 +111,14 @@ const routes = [
     component: Trip
   },
   {
-    path: "/Alarms",
+    path: "/alarms/:id/:day",
     component: Alarms
   },
+  {
+    path: "/alarms",
+    component: SelectAlarms
+  },
+
   {
     path: "/Switch/:full_screen",
     beforeEnter (to, from, next) {
@@ -107,8 +134,8 @@ const routes = [
   {
     path: "/SelectAssetsAlarmsDate/:id",
     component: AssetsAlarmsDate
-  }  
-  
+  }
+ 
 
 ];
 

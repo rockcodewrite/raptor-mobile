@@ -51,6 +51,16 @@
                 </v-card-text>
               </v-card>
 
+              <v-alert
+                dense
+                outlined
+                type="error"
+                v-if="!isLoggingIn"
+              >
+                <strong> Error:</strong>  Unable to login.  <strong> </strong> 
+              </v-alert>
+                      
+
               <!-- <div v-if="options.isLoggingIn">Don't have an account?
               <v-btn light="light" @click="(options.isLoggingIn = false)">Sign up</v-btn>
               </div>-->
@@ -82,11 +92,15 @@ export default {
     };
   },
 
+  mounted: function() {
+
+  },
+
   methods: {
     btnSignIn_Click: function() {
       console.log("btnSignIn_Click()");
 
-      var url = "/api/Authenticate";
+      var url = "/api/Authenticate?redirect=false";
       if (!this.mock) {
         url = this.baseUrl + url;
       }
@@ -95,7 +109,6 @@ export default {
       }
 
       console.log("url:" + url); //debugger;
-
       this.$axios
         .post(url, {
           username: this.user.email,
@@ -106,23 +119,24 @@ export default {
           UnitID: ""
         })
         .then(response => {
-          //debugger;
-          if (!this.debug) {
+          debugger;
+          if (this.debug) {
             console.log(response.data);
           }
 
-          this.client_details = response.data;
+          if (response.data.success === true)          {
+             this.client_details = response.data;
+             this.loggedIn = true;
+             this.$parent.show = true;
+          }
+        else   {
 
-          this.$router.push("/home");
+          }
         })
         .catch(e => {
-          this.errors.push(e);
+          console.log(e);
+          //this.errors.push(e);
         });
-    },
-
-    todayClicked: function(message) {
-      this.picker = new Date().toISOString().substr(0, 10);
-      console.log(this.picker);
     }
   },
 

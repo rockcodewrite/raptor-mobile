@@ -66,7 +66,7 @@ export default function routines(_baseUrl, moment) {
   ///    Modifed, for House Alarams
   ///----------------------------------------------------------
   this.formatImageIgnStat = function(cellValue) {
-    debugger;
+    //debugger;
     var today = moment(); //new Date();
     var last = moment(cellValue.LastUpdateTime);
     var stationary = IMG_STOP;

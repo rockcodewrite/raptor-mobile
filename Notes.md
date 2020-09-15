@@ -1,3 +1,14 @@
+##  2020-09-09
+- Next get the alarms showing
+- Allow back navigate
+- Enable logging in and out.
+- Show login failure error 
+
+
+
+## 2020-09-07 
+- Trying to figure out how to integrate Login into the application
+
 ## 2020-09-01
 - Reploy RaptorWeb  so I can test the things on this site while developing.
 

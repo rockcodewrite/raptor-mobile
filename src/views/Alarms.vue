@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>Select Trips</h1>
-    
-    <!--  List the Vehicles 
-    {{$route.params.id }} : {{$route.params.day }}
-    -->
+    <h1>
+      <v-icon>fa fa-exclamation-triangle</v-icon>Alarms
+    </h1>
+
+    <!-- {{$route.params.id }} : {{$route.params.day }}-->
     <!--    _________________________________________________________________________________________-->
     <v-list three-line>
       <template v-for="(item, index) in items">
@@ -12,23 +12,19 @@
 
         <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
-        <v-list-item v-else :key="item.title" @click :to="'/Trip/' + $route.params.id +'/' + item.StartPosId + '/' + item.EndPosId  ">
-
+        <v-list-item v-else :key="item.title">
           <v-list-item-avatar>
-            <v-icon>fa fa-arrows-h</v-icon>
-            
+            <v-icon>fa fa-exclamation-triangle</v-icon>
           </v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title v-html=" '(' + item.TripNum + ')'  "></v-list-item-title>
-               <v-list-item-subtitle >
-                  <b> Time: </b> {{item.SubTitle}}
-                  <b> Distance: </b> {{item.Distance}}
-               </v-list-item-subtitle>
-
-            
-              
-
+            <v-list-item-title v-html=" '[' + item.Name + ']'  "></v-list-item-title>
+            <v-list-item-subtitle>
+              <b>Time:</b>
+              {{item.EventDate.split('T')[1]}}
+              <b>Distance:</b>
+              {{item.Description}}
+            </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </template>
@@ -54,19 +50,17 @@ export default {
      *
      *
      */
+    var url = "/api5/V5_view_ViolationsByDay_"; //
 
-    //https://control.raptortech.co.za/api3/V3view_UnitTrips_Grid?&UnitID=860990002907872&Day=20200615
-    var url = "/api3/V3view_UnitTrips_Grid";
     if (!this.mock) {
       url = this.baseUrl + url;
       //debugger;
       var Day = this.$route.params.day.replace(/-/g, "");
       url += "?UnitID=" + this.$route.params.id + "&Day=" + Day;
-     } 
-    else {
-
+    } else {
+      url += ".json";
     }
-    
+
     if (this.debug) {
       console.log(url);
     }
@@ -95,13 +89,6 @@ export default {
           entry.SubTitle += entry.EndTime.split("T")[1];
         });
         console.log(this.items);
-        /* this.vehicles = this.$_.filter(this.items, function(item) {
-          return item.UnitModel2ID !== 35;
-        });
-
-        this.assets = this.$_.filter(this.items, function(item) {
-          return item.UnitModel2ID === 35;
-        }); */
       })
       .catch(e => {
         this.errors.push(e);

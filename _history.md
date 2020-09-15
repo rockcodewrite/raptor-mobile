@@ -1,3 +1,9 @@
+## Version 0.3.2
+- Got Alarm view working
+
+## Version 0.3.1
+- Integreated Login with the v-if conditional rendering
+
 ## Version 0.3.0
 - Added Login screen
 

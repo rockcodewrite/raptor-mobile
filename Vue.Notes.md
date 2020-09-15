@@ -2,6 +2,13 @@ Use Any JavaScript Library With Vue.js:
 
 https://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/
 
+
+### Conditional Rendering 
+
+https://vuejs.org/v2/guide/conditional.html
+
+https://michaelnthiessen.com/force-re-render/
+
 ### Routining
 
 

@@ -46,8 +46,9 @@ export default {
        *  Pushrouter method was documented here: 
        *   https://medium.com/@saidhayani/understand-routing-in-vue-js-with-examples-6da96979c8e3
        */
+       // https://control.raptortech.co.za/api5/V5_view_ViolationsByDay_?UnitiD=33066&Day=2020/09/14
 
-      this.$router.push("/Trips/" + this.$route.params.id + "/" + this.picker);
+      this.$router.push("/alarms/" + this.$route.params.id + "/" + this.picker);
     },
 
     todayClicked: function(message) {

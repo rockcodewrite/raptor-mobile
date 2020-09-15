@@ -1,7 +1,10 @@
 <template>
   <div>
+    <h2> Day of Trips</h2>
+    <!-- <h1>Select Assets</h1> 
+    
     {{$route.params.id }}
-    <!-- <h1>Select Assets</h1> -->
+    -->
     <!--  List the Vehicles -->
     <!--    _________________________________________________________________________________________-->
     <v-layout row>
