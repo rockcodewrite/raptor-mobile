@@ -1,14 +1,14 @@
 <template>
   <v-container grid-list-md fluid>
     <v-layout wrap>
-      <H1>About Template</H1>
+      <H1>About &nbsp;  </H1>
 
       <div class="scrollable">
         <div class="scrollable-content">
           <div class="list-group text-center">
             <h1>
               {{title}}
-              <small>1.0.4</small>
+              <small>1.5.0</small>
             </h1>
 
             <div id="MainMenuIcon">
@@ -23,12 +23,11 @@
             </div>
 
             <div class="list-group-item list-group-item-home">
-              <div>
-                <i class="fa fa-dashboard feature-icon text-primary"></i>
-              </div>
+
               <div>
                 <pre>{{userAgent}}</pre>
               </div>
+              
             </div>
           </div>
         </div>

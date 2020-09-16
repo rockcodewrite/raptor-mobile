@@ -1,8 +1,15 @@
+Next
+- Get naviage back button working if you can
+
+## 2020-09-16
+= logging out not working. 
+
 ##  2020-09-09
 - Next get the alarms showing
 - Allow back navigate
 - Enable logging in and out.
 - Show login failure error 
+
 
 
 
@@ -33,9 +40,7 @@ ceckout: https://codepen.io/madyanalj/pen/KRXxpN
 - Get Icons showing correctly.
 
 ## Next
-
-]2020-07-06
-
+- 2020-07-06
 - Get trips working correctly
 
 ## Next

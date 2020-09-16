@@ -47,12 +47,22 @@ export default {
        *   https://medium.com/@saidhayani/understand-routing-in-vue-js-with-examples-6da96979c8e3
        */
 
-      this.$router.push("/Trips/" + this.$route.params.id + "/" + this.picker);
+      var route = "/Trips/" + this.$route.params.id + "/" + this.picker;
+      if (this.debug) {
+          console.log(route);
+      }
+      this.$router.push(route);
+      
     },
 
     todayClicked: function(message) {
-      this.picker = new Date().toISOString().substr(0, 10);
-      console.log(this.picker);
+      var today  = new Date().toISOString().substr(0, 10);
+      var route = "/Trips/" + this.$route.params.id + "/" + today;
+      if (this.debug) {
+          console.log(route);
+      }
+      this.$router.push(route);
+
     }
   }
 };

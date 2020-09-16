@@ -9,6 +9,22 @@ https://vuejs.org/v2/guide/conditional.html
 
 https://michaelnthiessen.com/force-re-render/
 
+
+``` js
+
+  <login v-if="!show"  />
+
+
+  import mainView from "./views/Main";
+
+  components: {
+    login,
+    mainView
+  }
+
+
+```
+
 ### Routining
 
 

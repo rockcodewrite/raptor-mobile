@@ -47,13 +47,22 @@ export default {
        *   https://medium.com/@saidhayani/understand-routing-in-vue-js-with-examples-6da96979c8e3
        */
        // https://control.raptortech.co.za/api5/V5_view_ViolationsByDay_?UnitiD=33066&Day=2020/09/14
+      var route = "/alarms/" + this.$route.params.id + "/" + this.picker
+      if (this.debug) {
+          console.log(route);
+      }
+      this.$router.push(route);
 
-      this.$router.push("/alarms/" + this.$route.params.id + "/" + this.picker);
     },
 
     todayClicked: function(message) {
-      this.picker = new Date().toISOString().substr(0, 10);
-      console.log(this.picker);
+      var today = this.picker = new Date().toISOString().substr(0, 10);
+      var route = "/alarms/" + this.$route.params.id + "/" + today;
+      if (this.debug) {
+          console.log(route);
+      }
+      this.$router.push(route);
+
     }
   }
 };

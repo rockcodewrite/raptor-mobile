@@ -107,7 +107,10 @@
     -->
     <v-app-bar app color="blue" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Raptor</v-toolbar-title>
+      <v-toolbar-title>Raptor Mobile &nbsp; &nbsp; </v-toolbar-title>
+      <v-btn icon  @click="navigateBack()" >
+        <v-icon>mdi-arrow-left-bold</v-icon>
+      </v-btn>
 
       <v-spacer></v-spacer>
 
@@ -136,7 +139,25 @@ export default {
       drawer: null
       //,show: true      
     };
-  }
+  },
+  methods: {
+
+    navigateBack: function(message) {
+      //debugger;
+      if(this.$router !== null ){
+        console.log(this.$router.history.current.fullPath)
+        this.$router.go(-1)
+        this.$router.go(this.$router.currentRoute)
+        console.log(this.$router.history.current.fullPath)
+        debugger;
+        //if (this.$router.history.current.fullPath !== "/") {
+        //    this.$router.push("/");
+       // }
+      }
+
+    }
+  }  
 };
 </script>
+
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      <v-icon>fa fa-exclamation-triangle</v-icon>Alarms
+        Alarms
     </h1>
 
     <!-- {{$route.params.id }} : {{$route.params.day }}-->
@@ -74,11 +74,11 @@ export default {
         }
 
         // Add
-        var retList = new this.$vehicleLists(this.baseUrl, this.$moment);
-        response.data.$values.map(function(value, key) {
-          //retList.formatImageIgnStat(value);
-          //retList.formantSubTitle(value);
-        });
+        //var retList = new this.$vehicleLists(this.baseUrl, this.$moment);
+        //response.data.$values.map(function(value, key) {
+        //  //retList.formatImageIgnStat(value);
+        //  //retList.formantSubTitle(value);
+        //});
 
         this.items = response.data.$values;
         this.items.forEach(function(entry) {
