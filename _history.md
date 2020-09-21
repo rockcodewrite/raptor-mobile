@@ -1,3 +1,6 @@
+## Version 0.3.3
+- Back nav working. 
+
 ## Version 0.3.2
 - Got Alarm view working
 

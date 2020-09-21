@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2> Day of Trips</h2>
+    <h2> Alarms For: {{$route.params.name}}</h2>
     <!-- <h1>Select Assets</h1> 
     
     {{$route.params.id }}
@@ -47,7 +47,7 @@ export default {
        *   https://medium.com/@saidhayani/understand-routing-in-vue-js-with-examples-6da96979c8e3
        */
        // https://control.raptortech.co.za/api5/V5_view_ViolationsByDay_?UnitiD=33066&Day=2020/09/14
-      var route = "/alarms/" + this.$route.params.id + "/" + this.picker
+      var route = "/alarms/" + this.$route.params.id + "/" + this.picker + "/" + this.$route.params.name
       if (this.debug) {
           console.log(route);
       }
@@ -57,7 +57,7 @@ export default {
 
     todayClicked: function(message) {
       var today = this.picker = new Date().toISOString().substr(0, 10);
-      var route = "/alarms/" + this.$route.params.id + "/" + today;
+      var route = "/alarms/" + this.$route.params.id + "/" + today + "/" + this.$route.params.name;
       if (this.debug) {
           console.log(route);
       }

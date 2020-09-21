@@ -1,8 +1,15 @@
 Next
-- Get naviage back button working if you can
+- Port to Visual Studio and deploy.
+
+## 2020-09-21
+- Navigate working but cant added or edit the url, as the whole thing reloads, 
+  but the naviage back now works. 
+- Also Added Asset Name to top of lists with Assets/ 
+
 
 ## 2020-09-16
 = logging out not working. 
+
 
 ##  2020-09-09
 - Next get the alarms showing

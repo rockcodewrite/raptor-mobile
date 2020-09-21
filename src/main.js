@@ -112,6 +112,11 @@ const routes = [
     component: Alarms
   },
   {
+    path: "/alarms/:id/:day/:name",
+    component: Alarms
+  },
+
+  {
     path: "/alarms",
     component: SelectAlarms
   },
@@ -131,12 +136,19 @@ const routes = [
   {
     path: "/SelectAssetsAlarmsDate/:id",
     component: AssetsAlarmsDate
+  },
+  {
+    path: "/SelectAssetsAlarmsDate/:id/:name",
+    component: AssetsAlarmsDate
   }
  
 
 ];
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({
+   mode: 'history',
+   routes 
+  });
 
 new Vue({
   vuetify,

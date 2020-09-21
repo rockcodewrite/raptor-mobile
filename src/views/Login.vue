@@ -12,17 +12,18 @@
                 <v-card-text>
                   <div class="subheading">
                     <template v-if="options.isLoggingIn">Log in to your customer portal</template>
-                    <template v-else="v-else">Crate a new account</template>
+                    <template v-else="">Crate a new account</template>
                   </div>
 
                   <v-form>
-                    <v-text-field
+                    <!-- <v-text-field
                       v-if="!options.isLoggingIn"
                       v-model="user.name"
                       light="light"
                       prepend-icon="person"
                       label="Name"
-                    ></v-text-field>
+                    ></v-text-field> -->
+
                     <v-text-field
                       v-model="user.email"
                       light="light"

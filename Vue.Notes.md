@@ -28,11 +28,29 @@ https://michaelnthiessen.com/force-re-render/
 ### Routining
 
 
+#### Using History Mode
+
+https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+
+Added history mode, to allow navigation back however, this does mean there needs to be a catch 
+all on server that navigates to main index.html if an entered route is not found. 
+
+``` js
+const router = new VueRouter({
+   mode: 'history',
+   routes 
+  });
+
+
+```
 
 #### Using Props examples
 
 this is a funciton that is called and runs locally when a route is called, 
 it was used previously for initialising maps when in static vue context/ 
+
+IIS: https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+
 
 ``` js
 

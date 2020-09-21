@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-        Alarms
+        Alarms: {{$route.params.name}}
     </h1>
 
     <!-- {{$route.params.id }} : {{$route.params.day }}-->

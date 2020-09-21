@@ -13,7 +13,9 @@
 
         <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
-        <v-list-item v-else :key="item.title" @click :to="'/SelectAssetsAlarmsDate/' + item.UnitID">
+        <v-list-item v-else :key="item.title" 
+        @click :to="'/SelectAssetsAlarmsDate/' + item.UnitID + '/' + item.RegNumber    ">
+
           <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
