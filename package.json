@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "4.1.1",
-    "axios": "0.19.2",
+    "axios": "1.6.0",
     "font-awesome": "4.7.0",
     "google-maps": "4.2.3",
     "moment": "2.24.0",
